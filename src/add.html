@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alta trabajador/a</title>
+    <title>Alta juego</title>
 <!--
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 -->	
@@ -22,24 +22,34 @@
 		<li><a href="index.php">Inicio</a></li>
 		<li><a href="add.html">Alta</a></li>
 	</ul>
-	<h2>Alta trabajador/a</h2>
+	<h2>Alta juego</h2>
 <!--Formulario de alta. 
 Al hacer click en el botón Agregar, llama a la página: add.php-->
 	<form action="add.php" method="post">
 		<div>
-			<label for="name">Nombre</label>
-			<input type="text" name="name" id="name" placeholder="nombre" required>
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" id="nombre" placeholder="nombre" required>
 		</div>
 
 		<div>
-			<label for="surname">Apellido</label>
-			<input type="text" name="surname" id="surname" placeholder="apellido" required>
+			<label for="categoria">Categoría</label>
+			<input type="text" name="categoria" id="categoria" placeholder="categoria" required>
 		</div>
 
 		<div>
-			<label for="age">Edad</label>
-			<input type="number" name="age" id="age" placeholder="edad" required>
+			<label for="num_jugadores">Número de Jugadores</label>
+			<input type="text" name="num_jugadores" id="num_jugadores" placeholder="num_jugadores" required>
 		</div>
+		
+		<div>
+                        <label for="duracion">Duración</label>
+                        <input type="text" name="duracion" id="duracion" placeholder="duracion" required>
+                </div>
+
+		<div>
+                        <label for="precio">Precio</label>
+                        <input type="number" name="precio" id="precio" placeholder="precio" required>
+                </div>
 
 		<div>
 			<input type="submit" name="inserta" value="Agregar">

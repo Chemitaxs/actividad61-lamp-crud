@@ -2,9 +2,16 @@ version: '3'
 
 services: 
   apache:
-    image: lumigv/lamp-crud-app:1.0
+    image: chemitaxs/lamp-crud-app:1.0
     ports: 
       - 80:80
+    environment: 
+      - DB_HOST=mariadb
+      - DB_NAME=${MARIADB_DATABASE}
+      - DB_USER=${MARIADB_USER}
+      - DB_PASSWORD=${MARIADB_PASSWORD}
+    volumes:
+      - ./src:/var/www/html
     depends_on:
       - mariadb
 

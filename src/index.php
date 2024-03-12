@@ -9,7 +9,7 @@ DB_PASSWORD: Contraseña del usuario e la BD
 include_once("config.php");
 
 //Consulta de selección. Selecciona todos los usuarios ordenados de manera descendente por el campo id
-$result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
+$result = mysqli_query($mysqli, "SELECT * FROM juegos ORDER BY id DESC");
 
 ?>
 
@@ -37,13 +37,15 @@ $result = mysqli_query($mysqli, "SELECT * FROM users ORDER BY id DESC");
 		<li><a href="index.php">Inicio</a></li>
 		<li><a href="add.html">Alta</a></li>
 	</ul>
-	<h2>Listado de trabajador@s</h2>
+	<h2>Listado de juegos</h2>
 	<table border="1">
 	<thead>
 		<tr>
 			<th>Nombre</th>
-			<th>Apellido</th>
-			<th>Edad</th>
+			<th>Categoría</th>
+			<th>Número de Jugadores</th>
+                        <th>Duración</th>
+                        <th>Precio</th>
 			<th>Acciones</th>
 		</tr>
 	</thead>
@@ -64,9 +66,11 @@ $res["age"] = "23";
 //Genera la tabla de la página inicial
 	while($res = mysqli_fetch_array($result)) {
 		echo "<tr>\n";
-		echo "<td>".$res['name']."</td>\n";
-		echo "<td>".$res['surname']."</td>\n";
-		echo "<td>".$res['age']."</td>\n";
+		echo "<td>".$res['nombre']."</td>\n";
+		echo "<td>".$res['categoria']."</td>\n";
+		echo "<td>".$res['num_jugadores']."</td>\n";
+                echo "<td>".$res['duracion']."</td>\n";
+                echo "<td>".$res['precio']."</td>\n";
 		echo "<td>";
 //En la última columna se añader dos enlaces para editar y modificar el registro correspondiente. Se le pasa por el método GET el id del registro		
 		echo "<a href=\"edit.php?id=$res[id]\">Editar</a>\n";
